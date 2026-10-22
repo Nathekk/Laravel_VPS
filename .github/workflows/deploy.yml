@@ -16,4 +16,4 @@ jobs:
           port: 2222
           username: ${{ vars.SSH_USER }}
           key: ${{ secrets.PRIVATE_KEY }}
-          script: "set -eu; cd ${{ secrets.APP_PATH }}; git pull --ff-only origin main; npm ci; npm run build;"
+          script: "set -eu; cd ${{ secrets.APP_PATH }}; git pull --ff-only origin main; npm ci; npm run build; service php8.5-fpm reload;"
